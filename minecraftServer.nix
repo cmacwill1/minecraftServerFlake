@@ -19,9 +19,7 @@
 	};
 
 	symlinks = {
-	  "mods" = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
-	    Lithium = fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/QCuodIia/lithium-fabric-0.14.7%2Bmc1.21.4.jar"; };
-	  });
+	  "mods" = ./mods;
 	};
       };
     };
