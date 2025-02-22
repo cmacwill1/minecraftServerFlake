@@ -1,16 +1,13 @@
 { inputs, pkgs, lib, ... }:
-
-{
-  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
-
   let
     vanillaPlusServerMods = pkgs.fetchPackwizModpack {
       url = "https://raw.githubusercontent.com/cmacwill1/vanillaPlusServer/refs/heads/main/pack.toml";
       packHash = "";
     };
   in
-  {
+{
+  imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers = {
     enable = true;
     eula = true;
@@ -31,5 +28,4 @@
       };
     };
   };
-  }
 }
