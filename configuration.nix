@@ -17,6 +17,7 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "nixos-minecraft"; # Define your hostname.
+  services.tailscale.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
